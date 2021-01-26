@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    //슬라임 자신의 Transform
-    [HideInInspector]
-    public Transform tr;
-
     //추적해야할 목표물의 Transform (Mummy's Transform)
     public Transform targetTr;
 
     public float moveSpeed = 1.5f;
     public float turnSpeed = 200.0f;
-
     public float traceDist = 5.0f;
+    
+    //슬라임 자신의 Transform
+    [HideInInspector]
+    public Transform tr;
 
     void Start()
     {

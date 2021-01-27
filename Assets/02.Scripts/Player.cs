@@ -74,6 +74,9 @@ public class Player : MonoBehaviour
             Debug.Log($"{a} + {b} = {sum}");
         };
 
+        //람다식
+        sumHandler += (int a, int b) => Debug.Log($"{a} * {b} = {a*b}");
+
         sumHandler(10, 20);
     }
 

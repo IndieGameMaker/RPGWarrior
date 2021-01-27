@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
 
     void MummyDie()
     {
-        Debug.Log("Mummy Die!!!");
+        //Debug.Log("Mummy Die!!!");
+        GameObject.Find("GameMgr").GetComponent<GameManager>().IsGameOver = true;
     }
 
     void Start()

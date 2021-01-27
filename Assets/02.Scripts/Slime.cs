@@ -40,6 +40,8 @@ public class Slime : MonoBehaviour
         if (distance <= traceDist * traceDist)
         {
             Debug.Log($"Closed Mummy !!! {distance}");
+            //Mummy를 향해서 회전처리
+            tr.LookAt(targetTr);
         }
     }
 

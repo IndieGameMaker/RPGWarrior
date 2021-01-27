@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
         get {return currHp;}
         set {
             currHp -= value;
+            Debug.Log($"currHp = {currHp}, Time = {Time.time}");
             if (currHp <= 0)
             {
                 MummyDie();

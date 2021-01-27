@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public float createTime = 3.0f;
 
+    public bool IsGameOver = false;
+
     void Start()
     {
         slime1 = Resources.Load<GameObject>("NPC/Slime");  
@@ -26,15 +28,21 @@ public class GameManager : MonoBehaviour
             points = group.GetComponentsInChildren<Transform>();
         }
 
-        InvokeRepeating("CreateSlime", 2.0f, createTime);
+        //InvokeRepeating("CreateSlime", 2.0f, createTime);
     }
 
-    void CreateSlime()
+    IEnumerator CreateSlime()
     {
-        int npcIdx = Random.Range(0, npc.Count); // (0, 2)  => 0, 1
-        int pointIdx = Random.Range(1, points.Length); // (1, 24) => 1,2,3,...,23
+        yield return new WaitForSeconds(2.0f);
+        
+        while (IsGameOver == false)
+        {
+            int npcIdx = Random.Range(0, npc.Count); // (0, 2)  => 0, 1
+            int pointIdx = Random.Range(1, points.Length); // (1, 24) => 1,2,3,...,23
 
-        Instantiate(npc[npcIdx], points[pointIdx].position, Quaternion.identity);
+            Instantiate(npc[npcIdx], points[pointIdx].position, Quaternion.identity);
+            yield return new WaitForSeconds(createTime);
+        }
     }
 
 }

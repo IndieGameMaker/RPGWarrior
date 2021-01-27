@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //클래스의 선언부
     //전역 변수
-    public Transform tr;
+    public Transform tr = null;
     public float speed = 2.0f;
     public float turnSpeed = 50.0f;    
 
@@ -18,6 +19,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //지역변수는 반드시 초깃값을 지정
+        //float r = 3.0f;
+
         float v = Input.GetAxis("Vertical"); //Up, Down/ W, S  : (-1.0f ~ 0.0f ~ +1.0f)
         float h = Input.GetAxis("Horizontal"); //Left, Right Arrow / A, D
 

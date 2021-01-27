@@ -31,4 +31,9 @@ public class Slime : MonoBehaviour
             Debug.Log($"Closed Mummy !!! {distance}");
         }
     }
+
+    void CalExp(int exp)
+    {
+        Debug.Log($"Integer exp = {exp}");
+    }
 }

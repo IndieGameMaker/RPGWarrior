@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float speed = 2.0f;
     public float turnSpeed = 50.0f;  
 
+    //Field
     private int initHp = 100;
     private int currHp = 100;
 

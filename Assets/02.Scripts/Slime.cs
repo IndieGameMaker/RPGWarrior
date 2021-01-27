@@ -31,11 +31,6 @@ public class Slime : MonoBehaviour
         //Random 클래스
         moveSpeed = Random.Range(1.0f, 2.5f);  //1.0f ~ 2.5f (inclucive)
         
-        //int maxLevel = Random.Range(0, 10); //0 ~ 9
-
-
-        // CalExp(10);
-        // CalExp(30.5f);
         CalExp<int>(10);
         CalExp<float>(35.7f);
         CalExp<double>(50.0d);
@@ -57,6 +52,7 @@ public class Slime : MonoBehaviour
         {
             //공격 애니메이션 실행
             anim.SetBool(hashAttack, true);
+            StartCoroutine(Attack());
         }
         else if (distance <= traceDist * traceDist)
         {
@@ -65,6 +61,12 @@ public class Slime : MonoBehaviour
             tr.LookAt(targetTr);
             tr.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
         }
+    }
+
+    IEnumerator Attack()
+    {
+        Debug.Log("Attack Mummy");
+        yield return null;
     }
 
     void CalExp<T>(T exp)

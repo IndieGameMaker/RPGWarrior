@@ -47,6 +47,8 @@ public class Slime : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (isWin == true) return; //this.enabled = false;
+
         //두 벡터간의 거리를 계산
         var distance = (tr.position - targetTr.position).sqrMagnitude;
 
@@ -96,7 +98,8 @@ public class Slime : MonoBehaviour
 
     void YouWin()
     {
-
+        isWin = true;
+        StopAllCoroutines();
     }
 
     // void CalExp(int exp)

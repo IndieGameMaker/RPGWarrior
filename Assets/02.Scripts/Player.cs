@@ -34,6 +34,13 @@ public class Player : MonoBehaviour
         //Debug.Log("Mummy Die!!!");
         //GameObject.Find("GameMgr").GetComponent<GameManager>().IsGameOver = true;
         GameManager.instance.IsGameOver = true;
+
+        //Tag NPC 객체를 모두 배열에 추가
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+        foreach (var enemy in enemies)
+        {
+            enemy.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
+        }
     }
 
     void Start()

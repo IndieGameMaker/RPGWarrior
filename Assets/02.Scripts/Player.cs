@@ -65,10 +65,16 @@ public class Player : MonoBehaviour
     void Start()
     {
         //델리게이트 타입으로 선언된 변수에 함수를 저장
-        sumHandler = Sum;
+        //sumHandler = Sum;
 
-        sumHandler(10, 5);
-        Debug.Log(sum);
+        //무명 메소드 방식
+        sumHandler += delegate (int a, int b) 
+        {
+            sum = a + b;
+            Debug.Log($"{a} + {b} = {sum}");
+        };
+
+        sumHandler(10, 20);
     }
 
     // Update is called once per frame

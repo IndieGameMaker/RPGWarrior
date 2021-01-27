@@ -50,6 +50,7 @@ public class Slime : MonoBehaviour
         {
             //공격 애니메이션 실행
             anim.SetBool(hashAttack, true);
+            
             isAttack = true;
             StartCoroutine(Attack());
         }
@@ -64,7 +65,6 @@ public class Slime : MonoBehaviour
             tr.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
         }
     }
-   
 
     IEnumerator Attack()
     {

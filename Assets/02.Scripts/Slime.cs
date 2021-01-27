@@ -18,6 +18,8 @@ public class Slime : MonoBehaviour
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();
+        CalExp(10);
+        CalExp(30.5f);
     }
 
     // Update is called once per frame
@@ -36,4 +38,10 @@ public class Slime : MonoBehaviour
     {
         Debug.Log($"Integer exp = {exp}");
     }
+
+    void CalExp(float exp)
+    {
+        Debug.Log($"Float exp = {exp}");
+    }
+
 }

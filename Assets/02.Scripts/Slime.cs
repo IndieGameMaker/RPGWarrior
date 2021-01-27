@@ -26,11 +26,13 @@ public class Slime : MonoBehaviour
     public bool isAttack = false;
     public bool isAttackTaskRunning = false;
 
+    public bool isWin = false;
+
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();
         targetTr = GameObject.Find("Mummy").GetComponent<Transform>();
-        
+
         anim = GetComponent<Animator>();
 
         //Random 클래스
@@ -90,6 +92,11 @@ public class Slime : MonoBehaviour
     {
         Debug.Log($"{typeof(T)} exp = {exp}");
         // typeof(int), typeof(string)
+    }
+
+    void YouWin()
+    {
+
     }
 
     // void CalExp(int exp)

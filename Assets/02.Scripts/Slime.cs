@@ -42,6 +42,7 @@ public class Slime : MonoBehaviour
             Debug.Log($"Closed Mummy !!! {distance}");
             //Mummy를 향해서 회전처리
             tr.LookAt(targetTr);
+            tr.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
         }
     }
 

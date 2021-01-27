@@ -30,9 +30,14 @@ public class Slime : MonoBehaviour
     private void Update()
     {
         //두 벡터간의 거리를 계산
-        var distance = Vector3.Distance(tr.position, targetTr.position);
+        //var distance = Vector3.Distance(tr.position, targetTr.position);
+        /*
+            var distance = (tr.position - targetTr.position).magnitude;
+        */
+        var distance = (tr.position - targetTr.position).sqrMagnitude;
 
-        if (distance <= traceDist)
+        // if (distance <= Mathf.Pow(traceDist, 2))
+        if (distance <= traceDist * traceDist)
         {
             Debug.Log($"Closed Mummy !!! {distance}");
         }

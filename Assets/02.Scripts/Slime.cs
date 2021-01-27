@@ -57,7 +57,7 @@ public class Slime : MonoBehaviour
         }
         else if (distance <= traceDist * traceDist)
         {
-            Debug.Log($"Closed Mummy !!! {distance}");
+            anim.SetBool("IsAttack", false);
             //Mummy를 향해서 회전처리
             tr.LookAt(targetTr);
             tr.Translate(Vector3.forward * Time.deltaTime * moveSpeed);

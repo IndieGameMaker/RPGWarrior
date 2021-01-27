@@ -57,7 +57,7 @@ public class Slime : MonoBehaviour
         {
             isAttack = false;
             StopCoroutine(Attack());
-            
+
             anim.SetBool(hashAttack, false);
             //Mummy를 향해서 회전처리
             tr.LookAt(targetTr);
@@ -71,7 +71,7 @@ public class Slime : MonoBehaviour
         while(isAttack == true)
         {
             Debug.Log($"Attack Mummy : {Time.time}");
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(2.0f);
         }
     }
 

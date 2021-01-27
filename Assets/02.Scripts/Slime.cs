@@ -18,8 +18,12 @@ public class Slime : MonoBehaviour
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();
-        CalExp(10);
-        CalExp(30.5f);
+        // CalExp(10);
+        // CalExp(30.5f);
+        CalExp<int>(10);
+        CalExp<float>(35.7f);
+        CalExp<double>(50.0d);
+        CalExp<string>("aaaa");
     }
 
     // Update is called once per frame
@@ -34,14 +38,20 @@ public class Slime : MonoBehaviour
         }
     }
 
-    void CalExp(int exp)
+    void CalExp<T>(T exp)
     {
-        Debug.Log($"Integer exp = {exp}");
+        Debug.Log($"{typeof(T)} exp = {exp}");
+        // typeof(int), typeof(string)
     }
 
-    void CalExp(float exp)
-    {
-        Debug.Log($"Float exp = {exp}");
-    }
+    // void CalExp(int exp)
+    // {
+    //     Debug.Log($"Integer exp = {exp}");
+    // }
+
+    // void CalExp(float exp)
+    // {
+    //     Debug.Log($"Float exp = {exp}");
+    // }
 
 }

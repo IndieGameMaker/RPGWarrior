@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance = null;
+
     public GameObject slime1;
     public GameObject slime2;
 
@@ -13,6 +15,11 @@ public class GameManager : MonoBehaviour
     public float createTime = 3.0f;
 
     public bool IsGameOver = false;
+
+    void Awake()
+    {
+        instance = this;  //Singleton Design Pattern
+    }
 
     void Start()
     {

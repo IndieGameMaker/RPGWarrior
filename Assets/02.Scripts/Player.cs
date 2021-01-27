@@ -43,9 +43,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    //델리게이트 (Delgate) : 함수를 저장할 수 있는 데이터의 타입 
+    int sum = 0;
+
+    void Sum(int a, int b)
+    {
+        sum = a + b;
+    }
+
+    //delegate {함수의 형태}
+    delegate void SumHandler(int a, int b);
+    //델리게이트 타입의 변수를 선언
+    SumHandler sumHandler;
+
     void Start()
     {
+        //델리게이트 타입으로 선언된 변수에 함수를 저장
+        sumHandler = Sum;
 
+        sumHandler(10, 5);
+        Debug.Log(sum);
     }
 
     // Update is called once per frame

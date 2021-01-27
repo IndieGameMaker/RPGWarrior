@@ -92,7 +92,7 @@ public class Slime : MonoBehaviour
 
     void CalExp<T>(T exp)
     {
-        Debug.Log($"{typeof(T)} exp = {exp}");
+        // Debug.Log($"{typeof(T)} exp = {exp}");
         // typeof(int), typeof(string)
     }
 

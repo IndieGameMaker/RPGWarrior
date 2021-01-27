@@ -29,12 +29,13 @@ public class GameManager : MonoBehaviour
         }
 
         //InvokeRepeating("CreateSlime", 2.0f, createTime);
+        StartCoroutine(CreateSlime());
     }
 
     IEnumerator CreateSlime()
     {
         yield return new WaitForSeconds(2.0f);
-        
+
         while (IsGameOver == false)
         {
             int npcIdx = Random.Range(0, npc.Count); // (0, 2)  => 0, 1

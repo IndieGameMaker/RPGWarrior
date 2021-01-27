@@ -28,6 +28,16 @@ public class Slime : MonoBehaviour
 
     public bool isWin = false;
 
+    void OnEnable()
+    {
+        Player.OnPlayerDie += this.YouWin;
+    }
+
+    void OnDisable()
+    {
+        Player.OnPlayerDie -= this.YouWin;
+    }
+
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();

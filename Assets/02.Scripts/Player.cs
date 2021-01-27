@@ -35,12 +35,14 @@ public class Player : MonoBehaviour
         //GameObject.Find("GameMgr").GetComponent<GameManager>().IsGameOver = true;
         GameManager.instance.IsGameOver = true;
 
+        OnPlayerDie();
+
         //Tag NPC 객체를 모두 배열에 추가
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
-        foreach (var enemy in enemies)
-        {
-            enemy.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
-        }
+        // GameObject[] enemies = GameObject.FindGameObjectsWithTag("NPC");
+        // foreach (var enemy in enemies)
+        // {
+        //     enemy.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
+        // }
     }
 
     //델리게이트 (Delgate) : 함수를 저장할 수 있는 데이터의 타입 
@@ -55,6 +57,10 @@ public class Player : MonoBehaviour
     delegate void SumHandler(int a, int b);
     //델리게이트 타입의 변수를 선언
     SumHandler sumHandler;
+
+    public delegate void PlayerDieHandler();
+    public static event PlayerDieHandler OnPlayerDie;
+
 
     void Start()
     {

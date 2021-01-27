@@ -75,7 +75,8 @@ public class Slime : MonoBehaviour
 
         while(isAttack == true)
         {
-            Debug.Log($"Attack Mummy : {Time.time}");
+            //Debug.Log($"Attack Mummy : {Time.time}");
+            Player.currHp -= 5;
             yield return new WaitForSeconds(2.0f);
         }
 

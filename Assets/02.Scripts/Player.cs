@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
     //전역 변수
     public Transform tr = null;
     public float speed = 2.0f;
-    public float turnSpeed = 50.0f;    
+    public float turnSpeed = 50.0f;  
+
+    private int initHp = 100;
+    public static int currHp = 100;
 
     void Start()
     {
@@ -19,6 +22,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"Take damaged hp ={currHp}, {(float)currHp / (float)initHp}");
         //지역변수는 반드시 초깃값을 지정
         //float r = 3.0f;
 

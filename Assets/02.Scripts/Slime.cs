@@ -20,6 +20,9 @@ public class Slime : MonoBehaviour
     [Range(1.0f, 3.0f)]
     public float attackDist = 2.0f;
 
+    //IsAttack 파라메터의 Hash 값을 미리 추출
+    private readonly int hashAttack = Animator.StringToHash("IsAttack");
+
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();
@@ -53,11 +56,11 @@ public class Slime : MonoBehaviour
         if (distance <= attackDist * attackDist)
         {
             //공격 애니메이션 실행
-            anim.SetBool("IsAttack", true);
+            anim.SetBool(hashAttack, true);
         }
         else if (distance <= traceDist * traceDist)
         {
-            anim.SetBool("IsAttack", false);
+            anim.SetBool(hashAttack, false);
             //Mummy를 향해서 회전처리
             tr.LookAt(targetTr);
             tr.Translate(Vector3.forward * Time.deltaTime * moveSpeed);

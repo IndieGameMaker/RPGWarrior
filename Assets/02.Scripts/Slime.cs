@@ -24,6 +24,7 @@ public class Slime : MonoBehaviour
     private readonly int hashAttack = Animator.StringToHash("IsAttack");
 
     public bool isAttack = false;
+    public bool isAttackTaskRunning = false;
 
     private void Start()
     {
@@ -51,13 +52,15 @@ public class Slime : MonoBehaviour
             //공격 애니메이션 실행
             anim.SetBool(hashAttack, true);
             
-            isAttack = true;
-            StartCoroutine(Attack());
+            if (isAttackTaskRunning == false)
+            {
+                isAttack = true;
+                StartCoroutine(Attack());
+            }
         }
         else if (distance <= traceDist * traceDist)
         {
             isAttack = false;
-            StopCoroutine(Attack());
 
             anim.SetBool(hashAttack, false);
             //Mummy를 향해서 회전처리
@@ -68,11 +71,15 @@ public class Slime : MonoBehaviour
 
     IEnumerator Attack()
     {
+        isAttackTaskRunning = true;
+
         while(isAttack == true)
         {
             Debug.Log($"Attack Mummy : {Time.time}");
             yield return new WaitForSeconds(2.0f);
         }
+
+        isAttackTaskRunning = false;
     }
 
     void CalExp<T>(T exp)

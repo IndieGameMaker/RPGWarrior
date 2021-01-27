@@ -16,6 +16,9 @@ public class Slime : MonoBehaviour
     public float turnSpeed = 200.0f;
     public float traceDist = 5.0f;
 
+    [Range(1.0f, 3.0f)]
+    public float attackDist = 2.0f;
+
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();

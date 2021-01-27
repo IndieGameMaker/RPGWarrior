@@ -12,7 +12,25 @@ public class Player : MonoBehaviour
     public float turnSpeed = 50.0f;  
 
     private int initHp = 100;
-    public static int currHp = 100;
+    private int currHp = 100;
+
+    //Property 
+    public int Damage
+    {
+        get {return currHp;}
+        set {
+            currHp -= value;
+            if (currHp <= 0)
+            {
+                MummyDie();
+            }
+        }
+    }
+
+    void MummyDie()
+    {
+        Debug.Log("Mummy Die!!!");
+    }
 
     void Start()
     {
@@ -22,7 +40,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Take damaged hp ={currHp}, {(float)currHp / (float)initHp}");
+        //Debug.Log($"Take damaged hp ={currHp}, {(float)currHp / (float)initHp}");
         //지역변수는 반드시 초깃값을 지정
         //float r = 3.0f;
 

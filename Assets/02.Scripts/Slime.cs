@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Slime : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class Slime : MonoBehaviour
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();
+
+        //Random 클래스
+        moveSpeed = Random.Range(1.0f, 2.5f);  //1.0f ~ 2.5f (inclucive)
+        
+        //int maxLevel = Random.Range(0, 10); //0 ~ 9
+
+
         // CalExp(10);
         // CalExp(30.5f);
         CalExp<int>(10);

@@ -469,9 +469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tr: {fileID: 0}
   targetTr: {fileID: 0}
-  moveSpeed: 1.5
+  moveSpeed: 1.2
   turnSpeed: 200
-  traceDist: 5
+  traceDist: 50
   attackDist: 2
   isAttack: 0
   isAttackTaskRunning: 0

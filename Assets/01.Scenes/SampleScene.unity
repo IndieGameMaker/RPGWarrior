@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tr: {fileID: 1064717034}
-  speed: 3
+  speed: 5
   turnSpeed: 200
 --- !u!4 &1064717034 stripped
 Transform:
@@ -1140,6 +1140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0c4cfe9ec474ef3978630ab164af47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slime1: {fileID: 0}
+  slime2: {fileID: 0}
+  npc: []
+  points: []
+  createTime: 3
 --- !u!4 &1786716102
 Transform:
   m_ObjectHideFlags: 0

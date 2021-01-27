@@ -29,6 +29,8 @@ public class Slime : MonoBehaviour
     private void Start()
     {
         tr = this.gameObject.GetComponent<Transform>();
+        targetTr = GameObject.Find("Mummy").GetComponent<Transform>();
+        
         anim = GetComponent<Animator>();
 
         //Random 클래스

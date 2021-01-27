@@ -100,6 +100,7 @@ public class Slime : MonoBehaviour
     {
         isWin = true;
         StopAllCoroutines();
+        anim.SetBool(hashAttack, false);
     }
 
     // void CalExp(int exp)
